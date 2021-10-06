@@ -1,9 +1,16 @@
+variable "s3_bucket_name" {
+  description = "Value of the Name S3 bucket"
+  type        = string
+  default     = "perconatempsysbenchresult"
+}
+
+
 resource "aws_s3_bucket" "sysbench_result" {
-  bucket = "perconatempsysbenchresult"
+  bucket = var.s3_bucket_name
   acl    = "private"
 
   tags = {
-    Name = "percona bucket"
+    Name = "My bucket"
   }
 }
 
@@ -33,6 +40,7 @@ resource "aws_security_group" "percona_lab_sg" {
   name        = "Sysbench Security Group"
   description = "percona sysbench testing SecurityGroup"
 
+
   dynamic "ingress" {
     for_each = ["80", "443", "8080", "8081", "1541", "9092", "9093"]
     content {
@@ -59,6 +67,6 @@ resource "aws_security_group" "percona_lab_sg" {
 
   tags = {
     Name  = "percona lab sysbench SecurityGroup"
-    Owner = "Percona performance team"
+    Owner = "Percona performance"
   }
 }

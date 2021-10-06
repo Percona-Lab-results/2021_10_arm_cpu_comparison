@@ -10,7 +10,7 @@ data "template_file" "init_001_setup_R" {
 data "template_file" "init_010_apache_web_log" {
   template = "${file("../modules/010_apache_web_log.sh.tpl")}"
   vars= {
-    external="${aws_s3_bucket.mksysbenchresult.id}"
+    external="${aws_s3_bucket.sysbench_result.id}"
   }
 }
 
@@ -37,6 +37,21 @@ data "template_file" "init_042_setup_pmm_arm" {
   }
 }
 
+data "template_file" "init_050_run_vm_benchmark_test" {
+  template = "${file("../modules/050_run_vm_benchmark_test.sh.tpl")}"
+  vars={
+    pmm_public_dns="${aws_instance.ubuntu_pmm_server.public_dns}"
+  }
+}
+
+data "template_file" "init_051_run_big_benchmark_test" {
+  template = "${file("../modules/051_big_benchmark_test.sh.tpl")}"
+  vars={
+    pmm_public_dns="${aws_instance.ubuntu_pmm_server.public_dns}"
+  }
+}
+
+
 data "template_file" "init_060_run_oltp_test" {
   template = "${file("../modules/080_run_oltp_read_only.sh.tpl")}"
   vars={
@@ -46,4 +61,7 @@ data "template_file" "init_060_run_oltp_test" {
 
 data "template_file" "init_090_copy_result" {
   template = "${file("../modules/090_copy_result_to_s3.sh.tpl")}"
+  vars= {
+    external_s3_bucket="${aws_s3_bucket.sysbench_result.id}"
+  }
 }

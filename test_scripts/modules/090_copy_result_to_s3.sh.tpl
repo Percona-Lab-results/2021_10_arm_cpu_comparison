@@ -12,7 +12,7 @@ bash ./pt-summary > /var/log/sysbench/pt_summary.log
 file_name=$${my_instance_type}_$(date +"%m%d%Y_%H%M")_sysbench_log.zip
 cd $log_folder
 zip -r $${file_name} /var/log/sysbench
-aws s3 cp /var/log/sysbench/$${file_name} s3://perconatempsysbenchresult/
+aws s3 cp /var/log/sysbench/$${file_name} s3://${external_s3_bucket}/
 add_web_log "Test result copied to S3 successfull"
 
 

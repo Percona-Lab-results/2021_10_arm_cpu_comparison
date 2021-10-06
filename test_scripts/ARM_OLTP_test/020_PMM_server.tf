@@ -24,4 +24,5 @@ resource "aws_instance" "ubuntu_pmm_server" {
 
 output "PMM_SERVER_STATS"{
   value = " public_ip = ${aws_instance.ubuntu_pmm_server.public_ip} \n private_ip = ${aws_instance.ubuntu_pmm_server.private_ip} \n ARN = ${aws_instance.ubuntu_pmm_server.arn} \n public_dns = ${aws_instance.ubuntu_pmm_server.public_dns}"
+
 }
