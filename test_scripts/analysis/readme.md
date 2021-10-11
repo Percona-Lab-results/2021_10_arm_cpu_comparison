@@ -1,4 +1,4 @@
-# lOREM IPSUM title
+# Analysis
 
 ## SETUP R and PACKAGES
 
@@ -49,7 +49,7 @@ you need add name of your S3 bucket as parameter
 
 
 ```bash
-Rscript 01_collect_data.R -s 's3://perconatempsysbenchresult'
+Rscript 01_collect_data.R -s 's3://variables3bucket'
 Rscript 02_generate_plots.R
 ```
 
