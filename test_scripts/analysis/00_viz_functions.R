@@ -144,6 +144,9 @@ get_db_universal <- function(input_dt,
   temp_dt[,x_break_label:=gsub("m5\\.","Intel\nm5\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("m5a\\.","AMD\nm5a\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("m6g\\.","Graviton\nm6g\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c5\\.","Intel\nm5\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c5a\\.","AMD\nm5a\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c6g\\.","Graviton\nc6g\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("t3\\.","Intel\nt3\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("t3a\\.","AMD\nmt3a\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("t4g\\.","Graviton\nt4g\\.",x_break_label)]
@@ -307,6 +310,12 @@ intel_graviton_comparison <- function(input_dt,
   temp_dt[,x_break_label:=gsub("m5\\.","Intel\nm5\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("m5a\\.","AMD\nm5a\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("m6g\\.","Graviton\nm6g\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c5\\.","Intel\nm5\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c5a\\.","AMD\nm5a\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c6g\\.","Graviton\nc6g\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t3\\.","Intel\nt3\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t3a\\.","AMD\nmt3a\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t4g\\.","Graviton\nt4g\\.",x_break_label)]
   temp_dt$color <- "white"
   temp_dt[x_break_label %like% "AMD"]$color <- "firebrick1"
   temp_dt[x_break_label %like% "Intel"]$color <- "dodgerblue"
@@ -402,6 +411,12 @@ requests_ph <- function(input_dt){
   temp_dt[,x_break_label:=gsub("m5\\.","Intel\nm5\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("m5a\\.","AMD\nm5a\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("m6g\\.","Graviton\nm6g\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c5\\.","Intel\nm5\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c5a\\.","AMD\nm5a\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c6g\\.","Graviton\nc6g\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t3\\.","Intel\nt3\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t3a\\.","AMD\nmt3a\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t4g\\.","Graviton\nt4g\\.",x_break_label)]
   temp_dt$color <- "white"
   temp_dt[x_break_label %like% "AMD"]$color <- "firebrick1"
   temp_dt[x_break_label %like% "Intel"]$color <- "dodgerblue"
@@ -441,6 +456,12 @@ requests_per_dollar <- function(input_dt){
   temp_dt[,x_break_label:=gsub("m5\\.","Intel\nm5\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("m5a\\.","AMD\nm5a\\.",x_break_label)]
   temp_dt[,x_break_label:=gsub("m6g\\.","Graviton\nm6g\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c5\\.","Intel\nm5\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c5a\\.","AMD\nm5a\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("c6g\\.","Graviton\nc6g\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t3\\.","Intel\nt3\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t3a\\.","AMD\nmt3a\\.",x_break_label)]
+  temp_dt[,x_break_label:=gsub("t4g\\.","Graviton\nt4g\\.",x_break_label)]
   temp_dt$color <- "white"
   temp_dt[x_break_label %like% "AMD"]$color <- "firebrick1"
   temp_dt[x_break_label %like% "Intel"]$color <- "dodgerblue"

@@ -33,8 +33,6 @@ resource "aws_instance" "SysBench_MySQL_ARM" {
     Type          = "ARM"
     Owner         = "Percona performance"
     Project       = "Terraform project"
-    instance_type = "t4g.medium"
-    storage_type  = "gp2"
   }
 
   depends_on = [

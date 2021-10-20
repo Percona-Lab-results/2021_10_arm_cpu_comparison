@@ -123,7 +123,7 @@ abs_com_overview <- intel_graviton_comparison(oltp_test_result,
                                               input_relative=FALSE)
 save_plot("04_abs_com_overview.png", abs_com_overview)
 
-abs_com_s <- intel_graviton_comparison(oltp_test_result[ec2_type == "slow"], 
+abs_com_s <- intel_graviton_comparison(oltp_test_result[ec2_type == "small"], 
                                        input_subtitle="",
                                        input_caption= "sysbench: 1.0.18, MySQL: 8.0.26-0",
                                        input_relative=FALSE)
@@ -135,7 +135,7 @@ abs_com_m <- intel_graviton_comparison(oltp_test_result[ec2_type == "medium"],
                                        input_relative=FALSE)
 save_plot("04_abs_com_m.png", abs_com_m)
 
-abs_com_f <- intel_graviton_comparison(oltp_test_result[ec2_type == "fast"], 
+abs_com_f <- intel_graviton_comparison(oltp_test_result[ec2_type == "large"], 
                                        input_subtitle="",
                                        input_caption= "sysbench: 1.0.18, MySQL: 8.0.26-0",
                                        input_relative=FALSE)
@@ -147,21 +147,21 @@ save_plot("04_abs_com_f.png", abs_com_f)
 ### requests per_dollar ###########
 p_05_rpd_overview <- requests_per_dollar(oltp_test_result)
 save_plot("05_p_05_rpd_overview.png", p_05_rpd_overview)
-p_05_rpd_s <- requests_per_dollar(oltp_test_result[ec2_type == "slow"])
+p_05_rpd_s <- requests_per_dollar(oltp_test_result[ec2_type == "small"])
 save_plot("05_p_05_rpd_s.png", p_05_rpd_s)
 p_05_rpd_m <- requests_per_dollar(oltp_test_result[ec2_type == "medium"])
 save_plot("05_p_05_rpd_m.png", p_05_rpd_m)
-p_05_rpd_f <- requests_per_dollar(oltp_test_result[ec2_type == "fast"])
+p_05_rpd_f <- requests_per_dollar(oltp_test_result[ec2_type == "large"])
 save_plot("05_p_05_rpd_f.png", p_05_rpd_f)
 
 ### request per hour  ##############
 p_06_rph_overview <- requests_ph(oltp_test_result)
 save_plot("06_p_06_rph_overview.png", p_06_rph_overview)
-p_06_rph_s <- requests_ph(oltp_test_result[ec2_type == "slow"])
+p_06_rph_s <- requests_ph(oltp_test_result[ec2_type == "small"])
 save_plot("06_p_06_rph_s.png", p_06_rph_s)
 p_06_rph_m <- requests_ph(oltp_test_result[ec2_type == "medium"])
 save_plot("06_p_06_rph_m.png", p_06_rph_m)
-p_06_rph_f <- requests_ph(oltp_test_result[ec2_type == "fast"])
+p_06_rph_f <- requests_ph(oltp_test_result[ec2_type == "large"])
 save_plot("06_p_06_rph_f.png", p_06_rph_f)
 
 #### eficient

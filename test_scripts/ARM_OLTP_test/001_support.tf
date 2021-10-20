@@ -1,7 +1,7 @@
 variable "s3_bucket_name" {
   description = "Value of the Name S3 bucket"
   type        = string
-  default     = "perconatempsysbenchresult"
+  default     = "perconaopensysbenchresult"
 }
 
 
@@ -10,7 +10,8 @@ resource "aws_s3_bucket" "sysbench_result" {
   acl    = "private"
 
   tags = {
-    Name = "My bucket"
+    Name = "Performance results"
+    Owner = "Percona performance"
   }
 }
 
